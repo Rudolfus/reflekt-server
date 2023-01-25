@@ -4,18 +4,16 @@ const questionSchema = new Schema(
   {
     question: {
       type: String,
-      required: true,
+      required: [true, "Please include a question."],
       maxLength: 140,
     },
-    author: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-      default: null /* null is used as a default value in the case
-      that the user who created the question is not found in the database */,
+    topic: {
+      type: String,
+      required: [true, "Please inlcude a topic."],
     },
-    deleted: {
+    isPublic: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     answerCount: {
       type: Number,
