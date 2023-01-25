@@ -3,7 +3,7 @@ const User = require("../models/User.model");
 const Question = require("../models/Question.model");
 const Answer = require("../models/Answer.model");
 
-const MONGO_URI = ;
+// const MONGO_URI = ;
 
 mongoose
   .connect(MONGO_URI)
