@@ -15,9 +15,9 @@ const answerSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "User",
     },
-    isPrivate: {
+    isPublic: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
   {
