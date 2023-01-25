@@ -21,7 +21,7 @@ router.get("/questions", (req, res, next) => {
   Question.find()
     .then((allQuestions) => res.json(allQuestions))
     .catch((err) => {
-      console.log("error getting all question", err);
+      console.log("error getting all questions", err);
       res.status(500).json(err);
     });
 });
