@@ -3,7 +3,8 @@ const User = require("../models/User.model");
 const Question = require("../models/Question.model");
 const Answer = require("../models/Answer.model");
 
-// const MONGO_URI = ;
+const MONGO_URI =
+  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/reflekt-server";
 
 mongoose
   .connect(MONGO_URI)
@@ -21,84 +22,66 @@ mongoose
 // Answer.collection.drop(); // Warning, drops answer collection
 
 const users = [
-    {
-        name: "Camille",
-        email: "camille@posteo.com",
-        password: "Camilla123",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60",
-        questions: [{}],
-    },
-    {
-        name: "Nadja",
-        email: "nadja@posteo.com",
-        password: "Nadja123",
-        image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60",
-        questions: [{}],
-    },
-    {
-        name: "Ralphi",
-        email: "ralphi@posteo.com",
-        password: "Ralphi123",
-        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60",
-        questions: [{}],
-    },
+  {
+    name: "Camille",
+    email: "camille@posteo.com",
+    password: "Camilla123",
+    image:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60",
+  },
+  {
+    name: "Nadja",
+    email: "nadja@posteo.com",
+    password: "Nadja123",
+    image:
+      "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60",
+  },
+  {
+    name: "Ralphi",
+    email: "ralphi@posteo.com",
+    password: "Ralphi123",
+    image:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60",
+  },
 ];
 
 const questions = [
-    {
-        "question": "What am I grateful for today?",
-        "topic": "self-care",
-        "isPublic": true,
-        "answerCount": 0,
-        "createdAt": "2023-01-25T20:32:18.752Z",
-        "updatedAt": "2023-01-25T20:32:18.752Z",
-        "__v": 0
-    },
-    {
-        "question": "How many ciagarettes do I smoke during the day?",
-        "topic": "smoking",
-        "isPublic": true,
-        "answerCount": 0,
-        "createdAt": "2023-01-25T20:37:19.475Z",
-        "updatedAt": "2023-01-25T20:37:19.475Z",
-        "__v": 0
-    },
-    {
-        "question": "What do I eat during the day",
-        "topic": "eating",
-        "isPublic": true,
-        "answerCount": 0,
-        "createdAt": "2023-01-25T20:37:54.243Z",
-        "updatedAt": "2023-01-25T20:37:54.243Z",
-        "__v": 0
-    },
-    {
-        "question": "Why do I get up early in the morning?",
-        "topic": "motivation",
-        "isPublic": true,
-        "answerCount": 0,
-        "createdAt": "2023-01-25T20:38:29.033Z",
-        "updatedAt": "2023-01-25T20:38:29.033Z",
-        "__v": 0
-    },
-    {
-        "question": "What do I not like about my job as an accountant?",
-        "topic": "job",
-        "isPublic": true,
-        "answerCount": 0,
-        "createdAt": "2023-01-25T20:38:48.170Z",
-        "updatedAt": "2023-01-25T20:58:12.134Z",
-        "__v": 0
-    },
-    {
-        "question": "When do I take time to talk to my mother?",
-        "topic": "relationship",
-        "isPublic": true,
-        "answerCount": 0,
-        "createdAt": "2023-01-25T20:39:25.460Z",
-        "updatedAt": "2023-01-25T20:39:25.460Z",
-        "__v": 0
-    }
+  {
+    question: "What am I grateful for today?",
+    topic: "self-care",
+    isPublic: true,
+    answerCount: 0,
+  },
+  {
+    question: "How many ciagarettes do I smoke during the day?",
+    topic: "smoking",
+    isPublic: true,
+    answerCount: 1,
+  },
+  {
+    question: "What do I eat during the day",
+    topic: "eating",
+    isPublic: true,
+    answerCount: 2,
+  },
+  {
+    question: "Why do I get up early in the morning?",
+    topic: "motivation",
+    isPublic: true,
+    answerCount: 3,
+  },
+  {
+    question: "What do I not like about my job as an accountant?",
+    topic: "job",
+    isPublic: true,
+    answerCount: 4,
+  },
+  {
+    question: "When do I take time to talk to my mother?",
+    topic: "relationship",
+    isPublic: true,
+    answerCount: 5,
+  },
 ];
 
 const answers = [
