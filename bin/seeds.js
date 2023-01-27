@@ -43,6 +43,27 @@ const users = [
     image:
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60",
   },
+  {
+    name: "Leo",
+    email: "Leo@posteo.com",
+    password: "Leo123",
+    image:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60",
+  },
+  {
+    name: "Franziska",
+    email: "Franziska@posteo.com",
+    password: "Franziska123",
+    image:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60",
+  },
+  {
+    name: "Joel",
+    email: "Joel@posteo.com",
+    password: "Joel123",
+    image:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydHJhaXR8ZW58MHx8MHx8&auto=format&fit=crop&w=700&q=60",
+  },
 ];
 
 const questions = [
@@ -53,22 +74,71 @@ const questions = [
     answerCount: 0,
   },
   {
+    question: "What am I good at?",
+    topic: "self-care",
+    isPublic: true,
+    answerCount: 34,
+  },
+  {
+    question: "What is good for me?",
+    topic: "self-care",
+    isPublic: true,
+    answerCount: 23,
+  },
+  {
     question: "How many ciagarettes do I smoke during the day?",
     topic: "smoking",
     isPublic: true,
-    answerCount: 1,
+    answerCount: 56,
   },
   {
-    question: "What do I eat during the day",
+    question: "In which situations did I smoke today?",
+    topic: "smoking",
+    isPublic: true,
+    answerCount: 12,
+  },
+  {
+    question:
+      "How did it make me feel the last time after having finished a smoke?",
+    topic: "smoking",
+    isPublic: true,
+    answerCount: 8,
+  },
+  {
+    question: "What do I eat during the day?",
     topic: "eating",
     isPublic: true,
-    answerCount: 2,
+    answerCount: 59,
+  },
+  {
+    question: "How many meals did I have today?",
+    topic: "eating",
+    isPublic: true,
+    answerCount: 6,
+  },
+  {
+    question: "What emotions do I connect with eating?",
+    topic: "eating",
+    isPublic: true,
+    answerCount: 27,
   },
   {
     question: "Why do I get up early in the morning?",
     topic: "motivation",
     isPublic: true,
-    answerCount: 3,
+    answerCount: 18,
+  },
+  {
+    question: "Who are the people that I look up to?",
+    topic: "motivation",
+    isPublic: true,
+    answerCount: 23,
+  },
+  {
+    question: "What am I proud of today?",
+    topic: "motivation",
+    isPublic: true,
+    answerCount: 50,
   },
   {
     question: "What do I not like about my job as an accountant?",
@@ -77,10 +147,28 @@ const questions = [
     answerCount: 4,
   },
   {
+    question: "What situation at work made me content?",
+    topic: "job",
+    isPublic: true,
+    answerCount: 1,
+  },
+  {
     question: "When do I take time to talk to my mother?",
     topic: "relationship",
     isPublic: true,
-    answerCount: 5,
+    answerCount: 7,
+  },
+  {
+    question: "Am I spending enough time with my friends?",
+    topic: "relationship",
+    isPublic: true,
+    answerCount: 24,
+  },
+  {
+    question: "Am I spending enough time with my kids?",
+    topic: "relationship",
+    isPublic: true,
+    answerCount: 11,
   },
 ];
 
