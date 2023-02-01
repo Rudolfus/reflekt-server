@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
+const { isAuthenticated } = require("../middleware/jwt.middleware");
 
 // Require the User model in order to interact with the database
 const User = require("../models/User.model");
@@ -18,14 +19,15 @@ router.get("/users", (req, res, next) => {
 });
 
 //  GET /api/users/:userId -  Retrieves a specific user by id
-router.get("/users/:userId", (req, res, next) => {
-  const { userId } = req.params;
-
-  if (!mongoose.Types.ObjectId.isValid(userId)) {
-    res.status(400).json({ message: "Specified id is not valid" });
-    return;
-  }
-  User.findById(userId)
+router.get("/user", (req, res, next) => {
+  // if (!mongoose.Types.ObjectId.isValid(userId)) {
+  //   res.status(400).json({ message: "Specified id is not valid" });
+  //   return;
+  // }
+  console.log(req.payload);
+  User.findById(req.payload._id)
+    .populate("questions")
+    .select("-password")
     .then((user) => res.status(200).json(user))
     .catch((err) => {
       console.log("error getting user details from DB", err);

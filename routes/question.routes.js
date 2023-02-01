@@ -1,15 +1,38 @@
 const router = require("express").Router();
-
 const mongoose = require("mongoose");
 
 const Question = require("../models/Question.model");
+const User = require("../models/User.model");
 
 //  POST /api/questions  -  Creates a new question
 router.post("/questions", (req, res, next) => {
   const { question, topic, isPublic } = req.body;
 
+  let newQuestion;
+
   Question.create({ question, topic, isPublic })
-    .then((response) => res.json(response))
+    .then((questionCreated) => {
+      newQuestion = questionCreated._id;
+      // notes by Luis
+      //findByIdAndUpdate(id, data)
+      // id of current user --> req.payload
+      // console.log(req.payload);
+      // data --> research: mongoose update add element to arra
+      //test + check in Compass
+
+      return User.findByIdAndUpdate(
+        req.payload._id,
+        {
+          $push: {
+            questions: newQuestion,
+          },
+        },
+        { new: true }
+      );
+    })
+    .then((response) => {
+      res.json(response);
+    })
     .catch((err) => {
       console.log("error creating new question", err);
       res.status(500).json(err);
