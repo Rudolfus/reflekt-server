@@ -74,6 +74,14 @@ const questions = [
     answerCount: 0,
   },
   {
+    question: "How many drinks have I had today?",
+    topic: "drinking",
+  },
+  {
+    question: "For what I am grateful for today is...",
+    topic: "gratitude",
+  },
+  {
     question: "What am I good at?",
     topic: "self-care",
     isPublic: true,
@@ -86,16 +94,38 @@ const questions = [
     answerCount: 23,
   },
   {
+    question: "What is one thing I can do today to make myself feel better?",
+    topic: "self-care",
+    isPublic: true,
+    answerCount: 23,
+  },
+  {
+    question: "What is one thing I can do today to make myself feel better?",
+    topic: "self-care",
+  },
+  {
     question: "How many ciagarettes do I smoke during the day?",
     topic: "smoking",
     isPublic: true,
     answerCount: 56,
   },
   {
+    question: "How many cigarettes have I smoked today?",
+    topic: "smoking",
+  },
+  {
     question: "In which situations did I smoke today?",
     topic: "smoking",
     isPublic: true,
     answerCount: 12,
+  },
+  {
+    question: "Did I smoke today?",
+    topic: "smoking",
+  },
+  {
+    question: "Do I feel better or worse after smoking?",
+    topic: "smoking",
   },
   {
     question:
@@ -169,6 +199,16 @@ const questions = [
     topic: "relationship",
     isPublic: true,
     answerCount: 11,
+  },
+  {
+    question:
+      "What is one thing I can do today to make someone else feel better?",
+    topic: "kindness",
+  },
+  {
+    question:
+      "What is one thing I can do today to make the world a better place?",
+    topic: "kindness",
   },
 ];
 

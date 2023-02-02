@@ -13,12 +13,6 @@ router.post("/questions", (req, res, next) => {
   Question.create({ question, topic, isPublic })
     .then((questionCreated) => {
       newQuestion = questionCreated._id;
-      // notes by Luis
-      //findByIdAndUpdate(id, data)
-      // id of current user --> req.payload
-      // console.log(req.payload);
-      // data --> research: mongoose update add element to arra
-      //test + check in Compass
 
       return User.findByIdAndUpdate(
         req.payload._id,

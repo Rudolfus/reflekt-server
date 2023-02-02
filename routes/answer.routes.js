@@ -9,6 +9,7 @@ router.post("/answers", (req, res, next) => {
   const { answer, isPublic } = req.body;
 
   Answer.create({ answer, isPublic })
+
     .then((response) => res.json(response))
     .catch((err) => {
       console.log("error creating new answer", err);
