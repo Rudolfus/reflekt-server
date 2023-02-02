@@ -7,18 +7,17 @@ const Question = require("../models/Question.model");
 
 //  POST /api/answers  -  Creates a new answer
 router.post("/answers", (req, res, next) => {
-  const { answer, isPublic } = req.body;
+  const { answer, isPublic, questionId } = req.body;
 
   let newAnswer;
 
-  Answer.create({ answer, isPublic })
+  Answer.create({ answer, isPublic, question: questionId })
     .then((answerCreated) => {
       newAnswer = answerCreated._id;
-
-      return Question.findByIdAndUpdate(question._id);
+      return Question.findByIdAndUpdate(questionId, {
+        $push: { answers: answerCreated._id },
+      });
     })
-    // define question
-    // get a second id
 
     .then((response) => res.json(response))
     .catch((err) => {
