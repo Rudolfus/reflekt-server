@@ -3,12 +3,22 @@ const router = require("express").Router();
 const mongoose = require("mongoose");
 
 const Answer = require("../models/Answer.model");
+const Question = require("../models/Question.model");
 
 //  POST /api/answers  -  Creates a new answer
 router.post("/answers", (req, res, next) => {
   const { answer, isPublic } = req.body;
 
+  let newAnswer;
+
   Answer.create({ answer, isPublic })
+    .then((answerCreated) => {
+      newAnswer = answerCreated._id;
+
+      return Question.findByIdAndUpdate(question._id);
+    })
+    // define question
+    // get a second id
 
     .then((response) => res.json(response))
     .catch((err) => {
