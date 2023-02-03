@@ -3,7 +3,10 @@ const User = require("../models/User.model");
 const Question = require("../models/Question.model");
 const Answer = require("../models/Answer.model");
 
+//to run the seed file in production, insert the url from adaptable but remove it again before a commit
+// so you avoid to expose the password that is part of it
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/reflekt-server";
+
 
 mongoose
   .connect(MONGO_URI)
