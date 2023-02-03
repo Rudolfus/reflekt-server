@@ -3,8 +3,7 @@ const User = require("../models/User.model");
 const Question = require("../models/Question.model");
 const Answer = require("../models/Answer.model");
 
-const MONGO_URI =
-  "mongodb+srv://rudi:123456qweR@cluster0.5gejlcs.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/reflekt-server";
 
 mongoose
   .connect(MONGO_URI)
